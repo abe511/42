@@ -1,7 +1,20 @@
-int ft_isalpha(int c)
-{
-  if(ft_isupper(c) || ft_islower(c))
-    return (1);
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abalayan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/10 18:30:12 by abalayan          #+#    #+#             */
+/*   Updated: 2021/03/10 18:38:29 by abalayan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-  return (0);
+#include "libft.h"
+
+int	ft_isalpha(int c)
+{
+	if (ft_isupper(c) || ft_islower(c))
+		return (1);
+	return (0);
 }

@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abalayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/10 18:31:17 by abalayan          #+#    #+#             */
-/*   Updated: 2021/03/10 18:43:15 by abalayan         ###   ########.fr       */
+/*   Created: 2021/03/25 15:23:10 by abalayan          #+#    #+#             */
+/*   Updated: 2021/03/25 15:27:15 by abalayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	return (0);
+	unsigned char	*dest;
+	unsigned char	*source;
+
+	dest = (unsigned char *)dst;
+	source = (unsigned char *)src;
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	while (n--)
+		*dest++ = *source++;
+	return (dst);
 }

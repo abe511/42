@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abalayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/10 18:31:17 by abalayan          #+#    #+#             */
-/*   Updated: 2021/03/10 18:43:15 by abalayan         ###   ########.fr       */
+/*   Created: 2021/03/22 17:29:55 by abalayan          #+#    #+#             */
+/*   Updated: 2021/03/23 17:29:15 by abalayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	ft_bzero(void *s, size_t n)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	return (0);
+	unsigned char	*c;
+
+	c = (unsigned char *)s;
+	while (n--)
+		*c++ = 0;
+	return ;
 }

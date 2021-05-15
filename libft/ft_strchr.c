@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abalayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/10 18:31:17 by abalayan          #+#    #+#             */
-/*   Updated: 2021/03/10 18:43:15 by abalayan         ###   ########.fr       */
+/*   Created: 2021/03/24 16:46:51 by abalayan          #+#    #+#             */
+/*   Updated: 2021/03/28 17:37:24 by abalayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	return (0);
+	char	*str;
+
+	str = (char *)s;
+	while (*str != '\0')
+	{
+		if (*str == c)
+			return (str);
+		str++;
+	}
+	if (c == '\0')
+		return (str);
+	return (NULL);
 }

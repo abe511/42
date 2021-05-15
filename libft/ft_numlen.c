@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_numlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abalayan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/10 18:31:17 by abalayan          #+#    #+#             */
-/*   Updated: 2021/03/10 18:43:15 by abalayan         ###   ########.fr       */
+/*   Created: 2021/03/30 18:56:04 by abalayan          #+#    #+#             */
+/*   Updated: 2021/03/30 20:39:06 by abalayan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+int	ft_numlen(int num, int sign)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	return (0);
+	int	len;
+
+	len = sign || (num == 0) ? 1 : 0;
+	if (sign)
+		num *= -1;
+	while (num)
+	{
+		num /= 10;
+		len++;
+	}
+	return (len);
 }
